@@ -2,7 +2,7 @@ import NavLinkStyled from "./NavLinkStyled"
 
 export default function NavbarMobileMonedero() {
   return (
-    <nav className="bg-red-800 text-sm underline underline-offset-4 sm:text-base p-2 flex justify-between">
+    <nav className="bg-red-800 p-3 gap-5 overflow-x-scroll underline underline-offset-4  flex justify-between 400px:justify-center">
           <NavLinkStyled
             to="/gastos" 
           >

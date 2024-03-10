@@ -1,9 +1,11 @@
-import { BiDollarCircle } from "react-icons/bi";
-import NavbarMobileMonedero from "./components/NavbarMobileMonedero";
-
 import {Chart as ChartJS} from "chart.js/auto";
-
 import { Bar } from "react-chartjs-2";
+
+import NavbarMobileMonedero from "./components/NavbarMobileMonedero";
+import NavbarMobilePrincipal from "./components/NavbarMobilePrincipal";
+import FilterMobile from "./components/FilterMobile";
+import TableMobile from "./components/TableMobile";
+import HeaderMobileMonedero from "./components/HeaderMobileMonedero";
 
 export default function AppLayout() {
   const barData = {
@@ -17,50 +19,67 @@ export default function AppLayout() {
       }
     ],
   }
+
+  const TableItems = [
+    {
+      id:1,
+      data: {
+        nombre: 'Corte de Cabello',
+        precio: 40.00,
+        categoria: 'Cuidado Personal',
+        fecha: '2024-03-10'
+      }
+    },
+    {
+      id:2,
+      data: {
+        nombre: 'Compra de Comida',
+        precio: 210.00,
+        categoria: 'Alimentacion',
+        fecha: '2024-03-13'
+      }
+    },
+    {
+      id:3,
+      data: {
+        nombre: 'Pago de Alugel',
+        precio: 500.00,
+        categoria: 'Habitacion',
+        fecha: '2024-04-09'
+      }
+    },
+  ]
   return (
     <div className="min-h-screen bg-red-900 p-0 md:p-5 flex text-white">
       {/* desktop screens */}
       <aside className="hidden md:block md:w-80">side bar</aside>
       
-      <main className="grow bg-gradient-to-b from-orange-300 to-orange-600">
+      <main className="grow overflow-x-hidden bg-gradient-to-b rounded-lg from-orange-300 to-orange-600">
         {/* mobile screens */}
-        <div className="md:hidden flex flex-col gap-3  rounded-0 md:rounded-lg " >
+        <div className="md:hidden pb-3 mb-[calc(40px+0.75rem+0.75rem)] flex flex-col gap-3" >
         <section>
           <div className="w-full p-3 bg-red-900 grid place-content-center">
-            <div className="flex py-10 gap-3">
-
-              <div className="p-3 rounded-full place-self-center bg-orange-500 grid place-content-center">
-                <BiDollarCircle size="50px"/>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <h1 className="text-2xl">Gasto Total</h1>
-                <p className="text-3xl">R$ 230,00</p>
-              </div>
-            </div>
+            <HeaderMobileMonedero title="Gasto Total" monto={230} />
           
           </div>
           <NavbarMobileMonedero/>
         </section>
         
-        <div className="bg-orange-200 p-3 mx-auto rounded-md w-[90%]">
+        {/* chart */}
+        <div className="bg-orange-200 p-3 mx-auto rounded-md w-9/10">
           <Bar 
             data={barData}
           />
         </div>
 
         {/* filter trigger */}
-        <div className="bg-[rgba(0,0,0,0.2)] w-[90%] mx-auto p-3 rounded-md flex justify-between">
-          <p>hola</p>
-          <p>lupa</p>
-        </div>
+        <FilterMobile title="Gastos" />
 
         {/* table rows */}
+        <TableMobile tableTitle="Gastos Mensuales" items={TableItems} />
 
         {/* mobile navbar */}
-        <nav className="fixed bottom-0 bg-red-900 w-full p-3">
-          principal mobile navbar 
-        </nav>
+        <NavbarMobilePrincipal />
 
       </div>
       </main>
