@@ -9,7 +9,7 @@ export default function HeaderMobileMonedero({title, monto}) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl">{title}</h1>
+        <h1 className="text-2xl">{title}s Mensuales</h1>
         <p className="text-3xl">R$ {monto.toFixed(2)}</p>
       </div>
     </div>

@@ -37,7 +37,7 @@ export default function AsideNav() {
 
         <hr className="border" />
 
-        <AsideFilter />
+        {/* <AsideFilter /> */}
     </section>
   )
 }

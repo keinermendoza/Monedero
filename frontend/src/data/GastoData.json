@@ -1,28 +1,25 @@
 [{
     "id":1,
-    "data": {
-      "nombre": "Corte de Cabello",
-      "precio": 40.00,
-      "categoria": "Cuidado Personal",
-      "fecha": "2024-03-10"
-    }
+    "nombre": "Corte de Cabello",
+    "monto": 40.00,
+    "categoria": "Cuidado Personal",
+    "fecha": "2024-03-10"
+    
   },
   {
     "id":2,
-    "data": {
-      "nombre": "Compra de Comida",
-      "precio": 210.00,
-      "categoria": "Alimentacion",
-      "fecha": "2024-03-13"
-    }
+    "nombre": "Compra de Comida",
+    "monto": 210.00,
+    "categoria": "Alimentacion",
+    "fecha": "2024-03-13"
+    
   },
   {
     "id":3,
-    "data": {
-      "nombre": "Pago de Alugel",
-      "precio": 500.00,
-      "categoria": "Habitacion",
-      "fecha": "2024-04-09"
-    }
+    "nombre": "Pago de Alugel",
+    "monto": 500.00,
+    "categoria": "Habitacion",
+    "fecha": "2024-04-09"
+    
 }
 ]

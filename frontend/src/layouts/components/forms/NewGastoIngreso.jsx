@@ -1,7 +1,7 @@
-export default function NewGasto() {
+export default function NewGastoIngreso({title}) {
   return (
     <form className="bg-black-20% border-2 border-orange-200 p-3 rounded-md flex flex-col gap-3">
-            <h3 className="text-xl">Nuevo Gasto</h3>
+            <h3 className="text-xl">Nuevo {title}</h3>
             <div className="flex justify-between gap-3">
                 <div>
                     <label

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 
 export default function TableMobileItem({data}) {
-    const {nombre, categoria, precio, fecha} = data
+    const {nombre, categoria, monto, fecha} = data
     return (
     <article className="flex justify-between">
         <div>
@@ -11,7 +11,7 @@ export default function TableMobileItem({data}) {
             <p className="mt-1 text-xs 400px:text-base">{categoria}</p>
         </div>
         <div className="text-right">
-            <p className="text-base whitespace-nowrap 400px:text-2xl">R$ {precio.toFixed(2)}</p>
+            <p className="text-base whitespace-nowrap 400px:text-2xl">R$ {monto.toFixed(2)}</p>
             <p className="mt-1 text-xs 400px:text-base">{fecha}</p>
         </div>
 

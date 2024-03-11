@@ -9,34 +9,41 @@ export default function NavbarMonedero({isMobile}) {
   return (
     <nav className={isMobile ? mobileStyle : baseStyle}>
           <NavLinkStyled
-            to="/gastos"
+            to="../resumen"
             isMobile={isMobile} 
           >
             Resumen
           </NavLinkStyled>
           <NavLinkStyled
-            to="/gastos"
+            to="../gastos"
             isMobile={isMobile}
           >
             Gastos
           </NavLinkStyled>
           <NavLinkStyled
-            to="/gastos"
+            to="../ingresos"
             isMobile={isMobile}
           >
             Ingresos
           </NavLinkStyled>
           <NavLinkStyled
-            to="/gastos"
+            to="../fijos"
+            isMobile={isMobile}
+          >
+            Fijos
+          </NavLinkStyled>
+          
+          <NavLinkStyled
+            to="../deudas"
             isMobile={isMobile}
           >
             Deudas
           </NavLinkStyled>
           <NavLinkStyled
-            to="/gastos"
+            to="../ahorros"
             isMobile={isMobile}
           >
-            Ahorro
+            Ahorros
           </NavLinkStyled>
     </nav>
   )
