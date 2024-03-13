@@ -1,5 +1,5 @@
-export default function TableRowDesktopMonedero({rowData}) {
-    const {nombre, monto, categoria, fecha} = rowData
+export default function TableRowDesktopMonedero({data}) {
+    const {nombre, monto, categoria, fecha} = data
     return (
     <tr >
         <th scope="row"  className="px-6 py-4 whitespace-nowrap">

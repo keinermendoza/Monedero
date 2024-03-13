@@ -13,24 +13,45 @@ import AppLayout from './layouts/AppLayout'
 import MonederoLayout from './layouts/MonederoLayout';
 
 // routes
-import GastosIngresos from "./routes/GastosIngresos";
-import Fijos from "./routes/Fijos";
+import MonederoSimpleCRUD from "./routes/MonederoSimpleCRUD";
+import MonederoFijos from "./routes/MonederoFijos";
+import MonederoResumen from "./routes/MonederoResumen";
+import Home from "./routes/Home";
+import Profile from "./routes/Profile";
+import Register from "./routes/Register";
+import Login from "./routes/Login";
+import PasswordForgotten from "./routes/PasswordForgotten";
+import ChangePassword from "./routes/ChangePassword";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppLayout />}>
+      <Route index element={<Home />} />
+
       <Route path="monedero" > 
         <Route index element={<Navigate to="gastos" />} />
-        <Route path="gastos" element={<GastosIngresos title="Gasto" />} />
-        <Route path="ingresos" element={<GastosIngresos title="Ingreso" />} />
-        <Route path="fijos" element={<Fijos />} />
+        <Route path="gastos" element={<MonederoSimpleCRUD title="Gasto"/>} /> 
+        <Route path="ingresos" element={<MonederoSimpleCRUD title="Ingreso" />} />
+        <Route path="deudas" element={<MonederoSimpleCRUD title="Deuda" />} />
+        <Route path="ahorros" element={<MonederoSimpleCRUD title="Ahorro" />} />
+        
+        <Route path="fijos" element={<MonederoFijos />} />
+        <Route path="resumen" element={<MonederoResumen />} />
 
 
-        {/* <Route path="resumen" element={<Resumen />} />
-        <Route path="ingresos" element={<Ingresos />} />
-        <Route path="deudas" element={<Deudas />} />
-        <Route path="ahorro" element={<Ahorro />} /> */}
+
       </Route>
+
+      <Route path="profile" >
+        <Route index element={<Profile />} />
+        <Route path="change-password" element={<ChangePassword />} />
+
+      </Route>
+      <Route path="register" element={<Register />} /> 
+      <Route path="login" element={<Login />} /> 
+      <Route path="password-forgotten" element={<PasswordForgotten />} /> 
+
+
       {/* <Route path="inicio" element={<Inicio />} />
       <Route path="perfil" element={<Perfil />} />
       <Route path="entrar" element={<Entrar />} />

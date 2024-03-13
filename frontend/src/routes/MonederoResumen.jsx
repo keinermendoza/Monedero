@@ -7,7 +7,10 @@ import { barData } from "../utils/barData";
 
 // desktop
 import HeaderDesktopMonedero from "../layouts/components/HeaderDesktopMonedero"
-import BodyDesktopMonedero from "../layouts/components/BodyDesktopMonedero"
+
+// import BodyDesktopMonedero from "../layouts/components/BodyDesktopMonedero"
+import TableDesktopMonedero from "../layouts/components/TableDesktopMonedero";
+import NewGastoIngreso from "../layouts/components/forms/NewGastoIngreso";
 
 // general
 import NavbarMonedero from "../layouts/components/NavbarMonedero";
@@ -18,7 +21,7 @@ import FilterMobile from "../layouts/components/FilterMobile";
 import TableMobile from "../layouts/components/TableMobile";
 import HeaderMobileMonedero from "../layouts/components/HeaderMobileMonedero";
 
-export default function GastosIngresos({title}) {
+export default function MonederoResumen() {
   return (
     <>
         {/* mobile screens */}
@@ -27,7 +30,7 @@ export default function GastosIngresos({title}) {
         {/* header */}
         <section>
           <div className="w-full p-3 bg-red-900 grid place-content-center">
-            <HeaderMobileMonedero title={title} monto={230} />
+            <HeaderMobileMonedero title="testing" monto={230} />
           
           </div>
           <NavbarMonedero isMobile/>
@@ -41,10 +44,10 @@ export default function GastosIngresos({title}) {
         </div>
 
         {/* filter trigger */}
-        <FilterMobile title={title} />
+        <FilterMobile title="testing" />
 
         {/* table rows */}
-        <TableMobile tableTitle={title} data={gastoData} />
+        <TableMobile tableTitle="testing" data={gastoData} />
 
         {/* mobile navbar */}
         <NavbarMobilePrincipal />
@@ -54,8 +57,21 @@ export default function GastosIngresos({title}) {
 
       {/* desktop */}
       <div className="hidden md:block w-full h-full">
+        {/* header */}
         <HeaderDesktopMonedero />
-        <BodyDesktopMonedero title={title} />
+        
+        {/* body */}
+        <section className="p-4 pt-6 flex items-start flex-col gap-5">
+            {/* Ingresos */}
+            <h2 className="text-black text-4xl font-medium">Ingresos Fijos Mensuales</h2>
+            <NewGastoIngreso title="Ingreso" />
+            <TableDesktopMonedero data={gastoData} />
+            <br className="my-3" />
+            {/* Gastos */}
+            <h2 className="text-black text-4xl font-medium">Gastos Fijos Mensuales</h2>
+            <NewGastoIngreso title="Gasto" />
+            <TableDesktopMonedero data={gastoData} />        
+        </section>
       </div>
 
 

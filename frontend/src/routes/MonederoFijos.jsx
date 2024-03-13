@@ -21,7 +21,7 @@ import FilterMobile from "../layouts/components/FilterMobile";
 import TableMobile from "../layouts/components/TableMobile";
 import HeaderMobileMonedero from "../layouts/components/HeaderMobileMonedero";
 
-export default function Fijos() {
+export default function MonederoFijos() {
   return (
     <>
         {/* mobile screens */}

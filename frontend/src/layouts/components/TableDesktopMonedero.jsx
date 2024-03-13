@@ -29,7 +29,7 @@ export default function TableDesktopMonedero({data}) {
         </thead>
         <tbody className="bg-black-20%">
             {data.map(rowData => (
-                <TableRowDesktopMonedero key={rowData.id} rowData={rowData} />
+                <TableRowDesktopMonedero key={rowData.id} data={rowData} />
             ))}
             
         </tbody>

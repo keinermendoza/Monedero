@@ -10,7 +10,7 @@ export default function AsideNav() {
         <nav>
             <ul className="flex flex-col gap-4">
                 <AsideNavItem  
-                    to="/home/"
+                    to="/"
                     text="Inicio"
                     icon={<FaHome />}
                 />
